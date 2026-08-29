@@ -26,3 +26,25 @@ grep -r "#include" src/
 ```
 
 <!-- TODO: paste actual grep output here once source files exist, showing only <...> standard library / POSIX headers -->
+src/main.cpp:1:#include <iostream>
+src/main.cpp:2:#include <fstream>
+src/main.cpp:3:#include <sstream>
+src/main.cpp:4:#include <string>
+src/main.cpp:5:#include <vector>
+src/main.cpp:6:#include <map>
+src/main.cpp:7:#include <unordered_map>
+src/main.cpp:8:#include <algorithm>
+src/main.cpp:9:#include <thread>
+src/main.cpp:10:#include <mutex>
+src/main.cpp:11:#include <ctime>
+src/main.cpp:12:#include <sys/socket.h>
+src/main.cpp:13:#include <netinet/in.h>
+src/main.cpp:14:#include <unistd.h>
+tests/test_main.cpp:1:#include <iostream>
+tests/test_main.cpp:2:#include <string>
+tests/test_main.cpp:3:#include <sstream>
+tests/test_main.cpp:4:#include <sys/socket.h>
+tests/test_main.cpp:5:#include <netinet/in.h>
+tests/test_main.cpp:6:#include <arpa/inet.h>
+tests/test_main.cpp:7:#include <unistd.h>
+Jigmat@MacBook-Air-20 CampusLink % 
