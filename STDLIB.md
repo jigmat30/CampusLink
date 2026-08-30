@@ -15,7 +15,6 @@ This document lists what third-party packages/libraries would normally be used f
 | 9 | A date/time formatting library | `<chrono>` + manual formatting for "X minutes ago" style timestamps | Standard library chrono is sufficient for this |
 | 10 | A testing framework (e.g. Google Test, Catch2) | A small hand-written C++ test client using raw sockets, with manual assertions | Keeps the test suite itself zero-dependency too |
 
-<!-- TODO: revisit and confirm all of the above are accurate once implementation is complete. Add any additional substitutions discovered during building (aim for 10+ to also qualify for the STDLIB Log bonus challenge). -->
 
 ## Dependency Proof
 
@@ -25,7 +24,6 @@ The following confirms no third-party headers are included anywhere in the sourc
 grep -r "#include" src/
 ```
 
-<!-- TODO: paste actual grep output here once source files exist, showing only <...> standard library / POSIX headers -->
 src/main.cpp:1:#include <iostream>
 src/main.cpp:2:#include <fstream>
 src/main.cpp:3:#include <sstream>
