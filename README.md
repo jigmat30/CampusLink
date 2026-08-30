@@ -141,6 +141,10 @@ make test
 ```
 This builds and runs `tests/test_main.cpp`, a hand-written test client that sends real HTTP requests over a raw socket and checks the responses — covering the homepage, posting, persistence, empty input, and unknown routes.
 
+## Single File Bonus
+
+The entire application — TCP server, HTTP request parsing, routing, persistent storage, and the full HTML/CSS/JavaScript frontend — lives in a single file: `src/main.cpp`. (`tests/test_main.cpp` is a separate test client, kept apart from the application itself as is standard practice.)
+
 ## Reproducible Build
 
 Building `campuslink` twice from a clean state produces byte-identical binaries, verified via SHA-256:
@@ -154,6 +158,20 @@ Both runs produced the same hash: b33229ae2e50065583f36b109615efb59c2e2ab8f35600
 
 
 This confirms the build is fully deterministic — no embedded timestamps, no non-reproducible compiler behavior — given the same source and compiler flags.
+
+## Package Killer Bonus
+
+**Package replaced:** [cpp-httplib](https://github.com/yhirose/cpp-httplib) — a widely-used single-header C++ HTTP server/client library, commonly reached for specifically to avoid writing raw socket and HTTP-parsing code by hand.
+
+**What CampusLink implements instead, entirely from POSIX sockets:**
+- TCP socket setup (`socket()`, `bind()`, `listen()`, `accept()`)
+- A hand-written HTTP request parser — reading raw bytes off the socket, parsing the request line, headers, and body (respecting `Content-Length`)
+- A hand-written HTTP response builder (status line, headers, body)
+- Routing based on method + path
+- Cookie parsing and setting (`Cookie` / `Set-Cookie` headers) for per-device identity, which cpp-httplib would otherwise provide helper methods for
+- Form body decoding (`application/x-www-form-urlencoded`, including percent-decoding)
+
+None of this uses cpp-httplib or any HTTP library — every layer between "bytes arrive on a socket" and "a parsed, routable request" was written by hand for this project.
 
 
 
