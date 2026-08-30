@@ -68,3 +68,6 @@ vcpkg_installed/
 Testing/
 .cache/
 messages.log
+polls.log
+votes.log
+reactions.log
