@@ -38,7 +38,7 @@ That reframes what this is actually useful for: not just an outage backup, but a
 **Where "only people physically present can even reach it" becomes a real feature:**
 - **Presence-based headcounts / lightweight attendance** — a teacher shares their laptop's IP as a poll; students on the classroom WiFi mark themselves present with one tap. Anyone outside the room, not connected to that network, simply cannot reach the poll at all.
 
-  # Future Aspect: A Real Attendance System
+  ## Future Aspect: A Real Attendance System
 
 Attendance is usually solved with expensive hardware — biometric scanners, RFID readers, dedicated kiosks — because the alternative (a teacher calling out names, or a paper sheet) doesn't scale and is easy to fake anyway. CampusLink's approach costs nothing beyond a laptop: students just connect to WiFi on the phones they already carry, and network reachability alone already does something biometric systems need dedicated hardware for — **proving you're physically in the room**, since a device outside the classroom's network genuinely cannot reach the server at all.
 
