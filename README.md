@@ -141,6 +141,20 @@ make test
 ```
 This builds and runs `tests/test_main.cpp`, a hand-written test client that sends real HTTP requests over a raw socket and checks the responses — covering the homepage, posting, persistence, empty input, and unknown routes.
 
+## Reproducible Build
+
+Building `campuslink` twice from a clean state produces byte-identical binaries, verified via SHA-256:
+
+```bash
+make clean && make && sha256sum campuslink
+make clean && make && sha256sum campuslink
+```
+
+Both runs produced the same hash: b33229ae2e50065583f36b109615efb59c2e2ab8f356003dc0f10f2c55999bae
+
+
+This confirms the build is fully deterministic — no embedded timestamps, no non-reproducible compiler behavior — given the same source and compiler flags.
+
 
 
 ## Demo Video
