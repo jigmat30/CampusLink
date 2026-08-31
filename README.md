@@ -177,7 +177,7 @@ None of this uses cpp-httplib or any HTTP library — every layer between "bytes
 
 ## Demo Video
 
-<!-- TODO: add link once recorded -->
+ [Watch the demo] https://youtu.be/zalToh0KLxQ
 
 
 
